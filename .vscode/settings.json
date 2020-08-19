@@ -1,0 +1,9 @@
+{
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.formatOnSave": true,
+	"javascript.implicitProjectConfig.checkJs": false,
+	"editor.tabSize": 2,
+	"editor.formatOnPaste": true,
+	"editor.detectIndentation": false,
+	"editor.insertSpaces": false
+}

@@ -1,0 +1,18 @@
+{
+	"name": "hermanospc-automated-news",
+	"version": "1.0.0",
+	"description": "Service cto reate news",
+	"main": "index.js",
+	"author": "Diego Gonzalez",
+	"license": "MIT",
+	"scripts": {
+		"start": "micro"
+	},
+	"dependencies": {
+		"apollo-fetch": "^0.7.0",
+		"dotenv": "^8.2.0",
+		"micro": "^9.3.4",
+		"moment": "^2.27.0",
+		"rss-parser": "^3.9.0"
+	}
+}
