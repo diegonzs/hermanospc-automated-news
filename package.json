@@ -10,7 +10,9 @@
 	},
 	"dependencies": {
 		"apollo-fetch": "^0.7.0",
+		"cloudinary": "^1.23.0",
 		"dotenv": "^8.2.0",
+		"firebase-admin": "^9.1.1",
 		"micro": "^9.3.4",
 		"moment": "^2.27.0",
 		"rss-parser": "^3.9.0"
