@@ -71,7 +71,7 @@ module.exports = async () => {
 	let flag = true;
 	let i = 0;
 
-	// console.log('se comenzaran a crear las noticias');
+	console.log('se comenzaran a crear las noticias');
 
 	while (flag) {
 		const pubDate = moment(rssNewsItems[i].pubDate);
@@ -106,7 +106,7 @@ module.exports = async () => {
 		}
 	}
 
-	// console.log(`ya se crearon todas las noticias. En total ${i}`);
+	console.log(`ya se crearon todas las noticias. En total ${i}`);
 
 	return;
 };
