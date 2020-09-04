@@ -71,7 +71,7 @@ module.exports = async () => {
 	let flag = true;
 	let i = 0;
 
-	// console.log('se comenzaran a crear las noticias');
+	console.log('se comenzaran a crear las noticias');
 
 	while (flag) {
 		const pubDate = moment(rssNewsItems[i].pubDate);
@@ -83,6 +83,7 @@ module.exports = async () => {
 				item: rssNewsItems[i],
 				sources: linksSources.data.links_sources,
 			});
+			data.cloudinaryId = '';
 			if (data.image) {
 				const cloudinaryResponse = await cloudinary.uploader.upload(
 					data.image,
@@ -111,7 +112,7 @@ module.exports = async () => {
 		}
 	}
 
-	// console.log(`ya se crearon todas las noticias. En total ${i}`);
+	console.log(`ya se crearon todas las noticias. En total ${i}`);
 
 	return;
 };
