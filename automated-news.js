@@ -95,13 +95,18 @@ module.exports = async () => {
 			}
 			// allNews.push(data);
 			const linkResponse = await fetch({ query: CREATE_NEWS, variables: data });
-			await sendNotification({
-				firebaseAdmin: admin,
-				title: data.title,
-				image: data.cloudinary_id ? data.cloudinaryId : data.image,
-				linkId: linkResponse.data.insert_links.returning[0].id,
-				sourceSlug: linkResponse.data.insert_links.returning[0].source.slug,
-			});
+			if (linkResponse.errors) {
+				console.log(linkResponse.errors);
+			}
+			if (linkResponse.data) {
+				await sendNotification({
+					firebaseAdmin: admin,
+					title: data.title,
+					image: data.cloudinary_id ? data.cloudinaryId : data.image,
+					linkId: linkResponse.data.insert_links.returning[0].id,
+					sourceSlug: linkResponse.data.insert_links.returning[0].source.slug,
+				});
+			}
 			i++;
 		}
 	}
