@@ -72,11 +72,11 @@ module.exports = async () => {
 	let i = 0;
 
 	console.log('se comenzaran a crear las noticias');
-
+	console.log('there is a news total of ', rssNewsItems.length);
 	while (flag) {
 		const pubDate = moment(rssNewsItems[i].pubDate);
-
-		if (rightNow.diff(pubDate) > 600000) {
+		console.log(`now: ${rightNow}, pubDate: ${pubDate}`);
+		if (rightNow.diff(pubDate) > 600000 * 2) {
 			flag = false;
 		} else {
 			const data = fillNews({
