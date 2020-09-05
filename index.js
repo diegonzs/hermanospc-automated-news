@@ -1,5 +1,6 @@
 require('dotenv').config();
 const automatedNews = require('./automated-news');
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
 
 module.exports = async (req, res) => {
 	await automatedNews();
