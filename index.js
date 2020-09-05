@@ -1,10 +1,15 @@
 require('dotenv').config();
 const automatedNews = require('./automated-news');
 
-(async () => {
+module.exports = async (req, res) => {
 	await automatedNews();
-	process.exit();
-})();
+	res.end('end');
+};
+
+// (async () => {
+// 	await automatedNews();
+// 	process.exit();
+// })();
 
 // setInterval(() => {
 // 	automatedNews();
