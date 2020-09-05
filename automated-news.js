@@ -76,7 +76,7 @@ module.exports = async () => {
 	while (flag) {
 		const pubDate = moment(rssNewsItems[i].pubDate);
 		console.log(`now: ${rightNow}, pubDate: ${pubDate}`);
-		if (rightNow.diff(pubDate) > 600000 * 2) {
+		if (rightNow.diff(pubDate) > 600000 * 20) {
 			flag = false;
 		} else {
 			const data = fillNews({
