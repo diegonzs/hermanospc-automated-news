@@ -71,11 +71,11 @@ module.exports = async () => {
 	let flag = true;
 	let i = 0;
 
-	// console.log('se comenzaran a crear las noticias');
-	// console.log('there is a news total of ', rssNewsItems.length);
+	console.log('se comenzaran a crear las noticias');
+	console.log('there is a news total of ', rssNewsItems.length);
 	while (flag) {
 		const pubDate = moment(rssNewsItems[i].pubDate);
-		// console.log(`now: ${rightNow}, pubDate: ${pubDate}`);
+		console.log(`now: ${rightNow}, pubDate: ${pubDate}`);
 		if (rightNow.diff(pubDate) > 600000 * 2) {
 			flag = false;
 		} else {
@@ -97,7 +97,7 @@ module.exports = async () => {
 			// allNews.push(data);
 			const linkResponse = await fetch({ query: CREATE_NEWS, variables: data });
 			if (linkResponse.errors) {
-				// console.log(linkResponse.errors);
+				console.log(linkResponse.errors);
 			}
 			if (linkResponse.data) {
 				await sendNotification({
@@ -112,7 +112,7 @@ module.exports = async () => {
 		}
 	}
 
-	// console.log(`ya se crearon todas las noticias. En total ${i}`);
+	console.log(`ya se crearon todas las noticias. En total ${i}`);
 
 	return;
 };
