@@ -26,6 +26,11 @@ var message = {
 		fcm_options: {
 			link: 'news-detail/8417c834-412c-4f7a-8547-b3a182d34774',
 		},
+		notification: {
+			image:
+				'https://res.cloudinary.com/tribuagency/image/upload/f_auto,q_80,w_335/news/jr3uv7tj7sfva910hern',
+			icon: 'https://news.hermanospc.co/brand/hpc-pwa-icon.png',
+		},
 		headers: {
 			image:
 				'https://res.cloudinary.com/tribuagency/image/upload/f_auto,q_80,w_335/news/jr3uv7tj7sfva910hern',

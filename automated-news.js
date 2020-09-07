@@ -103,7 +103,7 @@ module.exports = async () => {
 				await sendNotification({
 					firebaseAdmin: admin,
 					title: data.title,
-					image: data.cloudinary_id ? data.cloudinaryId : data.image,
+					image: data.image,
 					linkId: linkResponse.data.insert_links.returning[0].id,
 					sourceSlug: linkResponse.data.insert_links.returning[0].source.slug,
 				});
