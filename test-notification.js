@@ -29,7 +29,8 @@ var message = {
 		notification: {
 			image:
 				'https://res.cloudinary.com/tribuagency/image/upload/f_auto,q_80,w_335/news/jr3uv7tj7sfva910hern',
-			icon: 'https://news.hermanospc.co/brand/hpc-pwa-icon.png',
+			icon: 'https://news.hermanospc.co/brand/maskable-icon-RGB.png',
+			badge: 'https://news.hermanospc.co/brand/badge-alpha-2.png',
 		},
 		headers: {
 			image:
