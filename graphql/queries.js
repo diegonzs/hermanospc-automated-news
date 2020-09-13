@@ -3,6 +3,7 @@ const GET_ALL_LINKS_SOURCES = `
 		links_sources {
 			id
 			slug
+			name
 			rss_link
 		}
 	}

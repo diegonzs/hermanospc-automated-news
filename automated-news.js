@@ -79,7 +79,6 @@ module.exports = async () => {
 		if (rightNow.diff(pubDate) > 600000 * 2) {
 			flag = false;
 		} else {
-			let imageForNotification;
 			const data = fillNews({
 				item: rssNewsItems[i],
 				sources: linksSources.data.links_sources,
@@ -90,13 +89,7 @@ module.exports = async () => {
 					data.image,
 					{
 						folder: 'news',
-						eager: [imageOptimizationForNotifications],
 					}
-				);
-
-				imageForNotification = cloudinary.image(
-					cloudinaryResponse.public_id,
-					imageOptimizationForNotifications
 				);
 
 				data.image = cloudinaryResponse.secure_url;
@@ -111,9 +104,10 @@ module.exports = async () => {
 				await sendNotification({
 					firebaseAdmin: admin,
 					title: data.title,
-					image: imageForNotification ? imageForNotification : data.image,
+					image: data.image,
 					linkId: linkResponse.data.insert_links.returning[0].id,
 					sourceSlug: linkResponse.data.insert_links.returning[0].source.slug,
+					sourceName: linkResponse.data.insert_links.returning[0].source.name,
 				});
 			}
 			i++;
