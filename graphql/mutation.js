@@ -5,6 +5,7 @@ const CREATE_NEWS = `
 				id
 				source {
 					slug
+					name
 				}
 			}
 		}
