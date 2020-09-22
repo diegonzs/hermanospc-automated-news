@@ -1,6 +1,6 @@
 const CREATE_NEWS = `
-	mutation CREATE_NEWS($categoryId: uuid, $content: String, $image: String, $originalLink: String, $tags: String, $title: String, $sourceId: uuid, $cloudinaryId: String) {
-		insert_links(objects: {category_id: $categoryId, content: $content, image: $image, original_link: $originalLink, source_id: $sourceId, tags: $tags, title: $title, cloudinary_id: $cloudinaryId }) {
+	mutation CREATE_NEWS($categoryId: uuid, $content: String, $image: String, $originalLink: String, $tags: String, $title: String, $sourceId: uuid, $cloudinaryId: String, $description: String) {
+		insert_links(objects: {category_id: $categoryId, content: $content, image: $image, original_link: $originalLink, source_id: $sourceId, tags: $tags, title: $title, cloudinary_id: $cloudinaryId, description: $description }) {
 			returning {
 				id
 				source {
