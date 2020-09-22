@@ -11,7 +11,6 @@ const { GET_ALL_LINKS_SOURCES } = require('./graphql/queries');
 
 //Mutations
 const { CREATE_NEWS } = require('./graphql/mutation');
-const { imageOptimizationForNotifications } = require('./lib/constants');
 
 // Cloudinary configuration
 cloudinary.config({
@@ -37,7 +36,11 @@ admin.initializeApp({
 });
 
 module.exports = async () => {
-	const parser = new Parser();
+	const parser = new Parser({
+		customFields: {
+			item: ['media:content'],
+		},
+	});
 	const rssNews = [];
 	let rssNewsItems = [];
 	const rightNow = moment();
