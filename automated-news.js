@@ -60,8 +60,12 @@ module.exports = async () => {
 	const linksSources = await fetch({ query: GET_ALL_LINKS_SOURCES });
 
 	for (const source of linksSources.data.links_sources) {
-		const news = await parser.parseURL(source.rss_link);
-		rssNews.push(news);
+		try {
+			const news = await parser.parseURL(source.rss_link);
+			rssNews.push(news);
+		} catch (e) {
+			console.log(e);
+		}
 	}
 
 	rssNews.forEach((source) => {
